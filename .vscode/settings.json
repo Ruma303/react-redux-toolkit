@@ -1,0 +1,21 @@
+{
+   //% Restore Terminals
+   "restoreTerminals.runOnStartup": true,
+   "restoreTerminals.terminals": [
+      {
+         "splitTerminals": [
+            {
+               "shouldRunCommands": true,
+               "name": "Terminal",
+            },
+            {
+               "shouldRunCommands": true,
+               "name": "Vite Server",
+               "commands": [
+                  "npm run dev",
+               ]
+            }
+         ]
+      }
+   ]
+}
