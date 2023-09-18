@@ -1,9 +1,10 @@
 import './App.css';
+import DogsList from './Components/DogsList';
 
 function App() {
     return (
         <>
-            <h1>React + Redux Toolkit</h1>
+            <DogsList />
         </>
     )
 };
