@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchDogs } from '../Features/dogSlice';
+import { fetchDogs } from '../Redux/Features/functions/dogSlice';
 
 const DogsList = () => {
     const error = useSelector(state => state.dogs.error);
