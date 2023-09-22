@@ -33,6 +33,9 @@ export const fetchDogs = () => async (dispatch) => {
     try {
         dispatch(fetchDogsStart());
         const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
         dispatch(fetchDogsSuccess(data.message));
     } catch (error) {

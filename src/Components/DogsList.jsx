@@ -12,21 +12,20 @@ const DogsList = () => {
         dispatch(fetchDogs());
     }, [dispatch]);
 
-
     const dogBreeds = dogs ? Object.keys(dogs) : [];
 
-    return (
-
-        <>
-            {/* aggiungere isLoading, error */}
-            <h1>DogsList</h1>
+    if (error) { return <h1>Errore nella richiesta</h1> }
+    if (isLoading) { return <h1>Caricamento</h1> }
+    return (<>
+            <h1>List of dog breeds</h1>
             <ul>
                 {dogBreeds.map((breed, index) => (
                     <li key={index}>{breed}</li>
                 ))}
             </ul>
-        </>
-    )
+        </>)
 }
 
 export default DogsList;
+
+
