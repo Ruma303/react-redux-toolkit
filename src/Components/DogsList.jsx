@@ -9,7 +9,7 @@ const DogsList = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchDogs());
+        dispatch(fetchDogsStart());
     }, [dispatch]);
 
     const dogBreeds = dogs ? Object.keys(dogs) : [];
