@@ -10,6 +10,8 @@ export const store = configureStore({
     },
     middleware: [log],
 
+    //middleware: [logger],
+
     //middleware: [double],
 
     //middleware: [log, double],
@@ -17,7 +19,7 @@ export const store = configureStore({
     //middleware: [double, log],
 
     /* middleware: (getDefaultMiddleware) => [
-        ...getDefaultMiddleware(), log, double], */
+        ...getDefaultMiddleware(), log, logger], */
 
     /* middleware: (getDefaultMiddleware) => [
         ...getDefaultMiddleware(), logger], */
