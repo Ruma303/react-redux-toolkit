@@ -14,7 +14,7 @@ function App() {
                 <BrowserRouter>
                     <Navbar />
                     <main className="main">
-                       <Routes />
+                        <Routes />
                     </main>
                 </BrowserRouter>
             </ApiProvider>
@@ -23,3 +23,5 @@ function App() {
 };
 
 export default App;
+
+
