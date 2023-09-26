@@ -6,16 +6,22 @@ export const postApi = createApi({
     endpoints: (builder) => ({
         getPosts: builder.query({
             query: () => 'posts',
+            providesTags: ['Posts'],
         }),
         getPost: builder.query({
             query: (id) => `posts/${id}`,
+            providesTags: ['Post'],
         }),
         createPost: builder.mutation({
-            query: (newPost) => ({
+            query: ({ title, body }) => ({
                 url: 'posts',
                 method: 'POST',
-                body: newPost,
+                body: {
+                    title,
+                    body
+                },
             }),
+            invalidatesTags: ['Posts'],
         }),
         updatePost: builder.mutation({
             query: ({ id, ...fields }) => ({
