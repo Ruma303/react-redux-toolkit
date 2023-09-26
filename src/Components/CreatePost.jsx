@@ -19,8 +19,8 @@ const CreatePost = () => {
         e.preventDefault();
 
         try {
-            await createPost({ title, body });
-            setCreatedPost({ title, body });
+            const result = await createPost({ title, body }).unwrap();
+            setCreatedPost(result);
             setTitle('');
             setBody('');
         } catch (error) {
@@ -47,13 +47,13 @@ const CreatePost = () => {
                 <br />
                 <button className='btn btn-primary' disabled={isLoading}>Create post</button>
             </form>
-                {createdPost &&
+            {createdPost &&
                 <>
                     <div className='alert alert-success mt-3'>Post created</div>
                     <h3>Post title: {createdPost.title}</h3>
                     <p>Post description: {createdPost.body}</p>
                 </>
-                }
+            }
         </>
 
     )

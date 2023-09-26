@@ -5,13 +5,9 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@popperjs/core';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { store } from './store/store.js';
-import { Provider } from 'react-redux';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <Provider store={store}>
-            <App />
-        </Provider>
+        <App />
     </React.StrictMode>,
 )
