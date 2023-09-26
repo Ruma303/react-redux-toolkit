@@ -1,29 +1,34 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+    import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const postApi = createApi({
-    reducerPath: 'postApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
-    endpoints: (builder) => ({
-        getPosts: builder.query({
-            query: () => 'posts',
-            providesTags: ['Posts'],
-        }),
-        getPost: builder.query({
-            query: (id) => `posts/${id}`,
-            providesTags: ['Post'],
-        }),
-        createPost: builder.mutation({
-            query: ({ title, body }) => ({
-                url: 'posts',
-                method: 'POST',
-                body: {
-                    title,
-                    body
-                },
+    export const postApi = createApi({
+        reducerPath: 'postApi',
+        baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
+        endpoints: (builder) => ({
+            getPosts: builder.query({
+                query: () => 'posts',
             }),
-            invalidatesTags: ['Posts'],
+            getPost: builder.query({
+                query: (id) => `posts/${id}`,
+            }),
+            createPost: builder.mutation({
+                query: ({ title, body }) => ({
+                    url: 'posts',
+                    method: 'POST',
+                    body: {
+                        title,
+                        body
+                    },
+                }),
+            }),
         }),
-        updatePost: builder.mutation({
+    })
+    export const {
+        useGetPostsQuery,
+        useGetPostQuery,
+    } = postApi;
+
+
+        /* updatePost: builder.mutation({
             query: ({ id, ...fields }) => ({
                 url: `posts/${id}`,
                 method: 'PUT',
@@ -35,13 +40,7 @@ export const postApi = createApi({
                 url: `posts/${id}`,
                 method: 'DELETE',
             }),
-        }),
-    }),
-})
-export const {
-    useGetPostsQuery,
-    useGetPostQuery,
-    useCreatePostMutation,
-    useUpdatePostMutation,
-    useDeletePostMutation,
-} = postApi;
+        }), */
+/* useCreatePostMutation,
+useUpdatePostMutation,
+useDeletePostMutation, */
