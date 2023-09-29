@@ -5,7 +5,6 @@ const initialState = {
     isLoading: false,
     error: null,
 }
-// const url = 'https://dog.ceo/api/breeds/list/all';
 
 const dogSlice = createSlice({
     name: 'dogs',
@@ -29,10 +28,7 @@ const dogSlice = createSlice({
 export const { fetchDogsStart, fetchDogsSuccess, fetchDogsFailure } = dogSlice.actions;
 export default dogSlice.reducer;
 
-//% Middleware API
-export const fetchDogs = () => async (dispatch) => {
-    dispatch(fetchDogsStart());
-};
+const url = 'https://dog.ceo/api/breeds/list/all';
 
 //% Funzioni JavaScript
 /* export const fetchDogs = () => async (dispatch) => {
@@ -48,3 +44,8 @@ export const fetchDogs = () => async (dispatch) => {
         dispatch(fetchDogsFailure(error.toString()));
     }
 }; */
+
+//% Middleware API
+export const fetchDogs = () => async (dispatch) => {
+    dispatch(fetchDogsStart());
+};
