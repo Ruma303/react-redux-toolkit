@@ -15,9 +15,9 @@ const SearchPost = () => {
     }
 
     return (
-        <p>
+        <>
             <h1>Search Post</h1>
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={handleFormSubmit} className='d-flex gap-2'>
                 <label htmlFor="search mr-3">Search post number: </label>
                 <input
                     id="search"
@@ -37,7 +37,7 @@ const SearchPost = () => {
             ) : (
                 <p>No post found.</p>
             )}
-        </p>
+        </>
     );
 }
 

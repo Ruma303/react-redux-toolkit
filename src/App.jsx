@@ -1,11 +1,9 @@
 import './App.css';
 import { ApiProvider } from '@reduxjs/toolkit/dist/query/react';
 import { postApi } from './Features/postApi';
-import { BrowserRouter, useRoutes } from 'react-router-dom';
-import { routes } from './Routes/routes';
+import { BrowserRouter } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-
-const Routes = () => useRoutes(routes);
+import Routes from './Routes/routes';
 
 function App() {
     return (

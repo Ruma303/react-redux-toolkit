@@ -10,16 +10,6 @@ export const postApi = createApi({
         getPost: builder.query({
             query: (id) => `posts/${id}`,
         }),
-        createPost: builder.mutation({
-            query: ({ title, body }) => ({
-                url: 'posts',
-                method: 'POST',
-                body: {
-                    title,
-                    body
-                },
-            }),
-        }),
     }),
 });
 
