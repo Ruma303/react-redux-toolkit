@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-//import { fetchDogs } from '../Redux/Features/functions/dogSlice';
+import { fetchDogs } from '../Redux/Features/functions/dogSlice';
 import { fetchDogsStart } from '../Redux/Features/functions/dogSlice';
 
 const DogsList = () => {
@@ -10,14 +10,14 @@ const DogsList = () => {
     const dispatch = useDispatch();
 
     // Funzioni
-    /* useEffect(() => {
+    useEffect(() => {
         dispatch(fetchDogs());
-    }, []); */
+    }, []);
 
     // Middleware
-    useEffect(() => {
+    /* useEffect(() => {
         dispatch(fetchDogsStart());
-    }, []);
+    }, []); */
 
     const dogBreeds = dogs ? Object.keys(dogs) : [];
 

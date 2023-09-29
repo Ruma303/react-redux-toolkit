@@ -31,7 +31,7 @@ export default dogSlice.reducer;
 const url = 'https://dog.ceo/api/breeds/list/all';
 
 //% Funzioni JavaScript
-/* export const fetchDogs = () => async (dispatch) => {
+export const fetchDogs = () => async (dispatch) => {
     try {
         dispatch(fetchDogsStart());
         const response = await fetch(url);
@@ -43,9 +43,9 @@ const url = 'https://dog.ceo/api/breeds/list/all';
     } catch (error) {
         dispatch(fetchDogsFailure(error.toString()));
     }
-}; */
+};
 
 //% Middleware API
-export const fetchDogs = () => async (dispatch) => {
+/* export const fetchDogs = () => async (dispatch) => {
     dispatch(fetchDogsStart());
-};
+}; */
