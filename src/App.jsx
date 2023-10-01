@@ -1,6 +1,6 @@
 import './App.css';
 import { ApiProvider } from '@reduxjs/toolkit/dist/query/react';
-import { postApi } from './Features/postApi';
+import { postApi } from './Features/Api/postApi';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Routes from './Routes/routes';

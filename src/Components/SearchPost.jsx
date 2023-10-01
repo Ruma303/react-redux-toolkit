@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useGetPostQuery } from '../Features/postApi';
+import { useGetPostQuery } from '../Features/Api/postApi';
 
 const SearchPost = () => {
     const [input, setInput] = useState('');

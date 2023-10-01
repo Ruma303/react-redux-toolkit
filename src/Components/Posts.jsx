@@ -1,4 +1,4 @@
-import { useGetPostsQuery } from '../Features/postApi';
+import { useGetPostsQuery } from '../Features/Api/postApi';
 
 const Posts = () => {
     /* const dataFetch = useGetPostsQuery();
