@@ -33,7 +33,10 @@ const SearchPost = () => {
             ) : post && input == '' ? (
                 <p>Please, submit a number</p>
             ) : post ? (
-                <p>{post.id}. {post.title}</p>
+                <div className='post mt-3'>
+                    <h2>{post.id}. {post.title}</h2>
+                    <p>{post.body}</p>
+                </div>
             ) : (
                 <p>No post found.</p>
             )}
