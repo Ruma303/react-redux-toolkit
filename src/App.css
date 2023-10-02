@@ -35,10 +35,25 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
 }
 
 input,
 textarea {
     background-color: white;
     color: black;
+}
+
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.post {
+    padding: .5em;
+    border: 1px solid grey;
+    border-radius: 15px;
+    max-width: 15em;
 }

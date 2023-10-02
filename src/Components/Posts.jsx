@@ -23,8 +23,11 @@ const Posts = () => {
                 <p>Error status: <b>{error.status}</b></p>
             </>
         ) : posts && (
-            <ul> {posts.map((post) =>
-                <li key={post.id}>{post.id}. {post.title}</li>)}
+            <ul className='post-list'> {posts.map((post) =>
+                <li key={post.id} className='post'>
+                    <h2>{post.id}. {post.title}</h2>
+                    <p>{post.body}</p>
+                </li>)}
             </ul>
         )}
     </>);
