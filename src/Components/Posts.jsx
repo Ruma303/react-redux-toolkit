@@ -1,4 +1,5 @@
 import { useGetPostsQuery } from '../Features/Api/postApi';
+import { Link } from 'react-router-dom';
 
 const Posts = () => {
     /* const dataFetch = useGetPostsQuery();
@@ -27,6 +28,10 @@ const Posts = () => {
                 <li key={post.id} className='post'>
                     <h2>{post.id}. {post.title}</h2>
                     <p>{post.body}</p>
+                    <div className="button-div">
+                        <Link className="btn btn-warning" to="/edit">Edit</Link>
+                        <Link className="btn btn-danger" to="/delete">Delete</Link>
+                    </div>
                 </li>)}
             </ul>
         )}

@@ -14,9 +14,6 @@ const Navbar = () => {
                 <li className="nav-item">
                     <NavLink className="nav-page" to="/create">Create</NavLink>
                 </li>
-                <li className="nav-item">
-                    <NavLink className="nav-page" to="/edit">Edit</NavLink>
-                </li>
             </ul>
         </nav>
     )

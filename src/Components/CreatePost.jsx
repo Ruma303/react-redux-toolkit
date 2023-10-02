@@ -17,7 +17,6 @@ const CreatePost = () => {
 
     const handleForm = async (e) => {
         e.preventDefault();
-
         try {
             const result = await createPost({ title, body }).unwrap();
             setCreatedPost(result);
