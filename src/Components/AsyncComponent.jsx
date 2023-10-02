@@ -3,15 +3,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchDogs, addDog } from '../Redux/Features/asyncThunk/asyncSlice';
 
 const AsyncComponent = () => {
+    const {error, isLoading, dogs} = useSelector(state => state.async);
+    /*
     const error = useSelector(state => state.async.error);
     const isLoading = useSelector(state => state.async.isLoading);
-    const dogs = useSelector(state => state.async.dogs);
+    const dogs = useSelector(state => state.async.dogs); */
     const dispatch = useDispatch();
     const [input, setInput] = useState('');
 
     useEffect(() => {
         dispatch(fetchDogs());
-    }, [dispatch]);
+    }, []);
 
     const handleInputChange = (e) => {
         setInput(e.target.value);

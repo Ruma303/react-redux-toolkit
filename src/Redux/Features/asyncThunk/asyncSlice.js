@@ -16,9 +16,8 @@ const asyncSlice = createSlice({
             state.dogs[action.payload] = [];
         }
     },
-    extraReducers: builder => {
-        builder
-            .addCase(fetchDogs.pending, state => {
+    extraReducers: (builder) => {
+            builder.addCase(fetchDogs.pending, state => {
                 state.status = 'loading';
             })
             .addCase(fetchDogs.fulfilled, (state, action) => {
@@ -27,6 +26,7 @@ const asyncSlice = createSlice({
             })
             .addCase(fetchDogs.rejected, (state, action) => {
                 state.status = 'failed';
+                console.log(action)
                 state.error = action.error.message;
             });
     },

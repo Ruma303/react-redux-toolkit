@@ -5,8 +5,8 @@ import AsyncComponent from './Components/AsyncComponent';
 function App() {
     return (
         <>
-            <DogsList />
-            {/* <AsyncComponent /> */}
+            {/* <DogsList /> */}
+            <AsyncComponent />
         </>
     )
 };

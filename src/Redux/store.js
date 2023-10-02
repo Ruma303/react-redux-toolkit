@@ -9,7 +9,7 @@ export const store = configureStore({
         dogs: dogReducer,
         async: asyncSlice
     },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(api),
+    /* middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(api), */
 });
 
