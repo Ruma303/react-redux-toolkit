@@ -6,9 +6,9 @@
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
-      "id": 2,
       "title": "Post 2",
-      "body": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+      "body": "Pellentesque habitant morbi tristique senectus.",
+      "id": 2
     },
     {
       "id": 3,

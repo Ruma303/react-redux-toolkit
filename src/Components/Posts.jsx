@@ -42,7 +42,8 @@ const Posts = () => {
                         <p>{post.body}</p>
                         <div className="button-div">
                             <Link className="btn btn-warning" to={`/edit/${post.id}`}>Edit</Link>
-                            <button className="btn btn-danger" onClick={() => handleDelete(post.id)}>Delete</button>
+                            <button className="btn btn-danger" onClick={() => handleDelete(post.id)}>
+                            Delete</button>
                         </div>
                     </li>
                 )}

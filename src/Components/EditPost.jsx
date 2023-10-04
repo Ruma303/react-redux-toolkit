@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useUpdatePostMutation, useGetPostQuery } from '../Features/Api/postApi';
 
 const EditPost = () => {
-    const { id } = useParams(); //? Ottiene l'id dal percorso
+    const { id } = useParams(); //* Ottiene l'id dal percorso
+    const navigate = useNavigate();
 
-    const { data: post, error, isLoading } = useGetPostQuery(id); //? carica i dati del post
+    const { data: post, error, isLoading } = useGetPostQuery(id); //* carica i dati del post
 
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
@@ -33,6 +34,7 @@ const EditPost = () => {
         e.preventDefault();
         try {
             const result = await editPost({ id, updatedPost: { title, body } }).unwrap();
+            //navigate('/');
             setEditedPost(result);
             setTitle('');
             setBody('');
