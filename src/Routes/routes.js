@@ -20,8 +20,13 @@ const routes = [
     },
     {
         path: '/edit',
-        element: React.createElement(EditPost)
-    },
+        children: [
+            {
+                path: ':id',
+                element: React.createElement(EditPost),
+            }
+        ]
+    }
 ];
 
 const Routes = () => useRoutes(routes);

@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
-import { useUpdatePostMutation } from '../Features/Api/postApi';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useUpdatePostMutation, useGetPostQuery } from '../Features/Api/postApi';
 
 const EditPost = () => {
+    const { id } = useParams(); //? Ottiene l'id dal percorso
+
+    const { data: post, error, isLoading } = useGetPostQuery(id); //? carica i dati del post
+
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [editedPost, setEditedPost] = useState(null);
-    const [editPost, { isLoading }] = useUpdatePostMutation();
+
+    const [editPost] = useUpdatePostMutation();
+
+    //* Imposta i valori iniziali del form con i dati del post esistente
+    useEffect(() => {
+        if (post) {
+            setTitle(post.title);
+            setBody(post.body);
+        }
+    }, [post]);
 
     const handleInputTitle = (e) => {
         setTitle(e.target.value);
@@ -18,12 +32,12 @@ const EditPost = () => {
     const handleForm = async (e) => {
         e.preventDefault();
         try {
-            const result = await editPost({ title, body }).unwrap();
+            const result = await editPost({ id, updatedPost: { title, body } }).unwrap();
             setEditedPost(result);
             setTitle('');
             setBody('');
         } catch (error) {
-            console.error("Failed to create post: ", error);
+            console.error("Failed to edit post: ", error);
         }
     }
 
