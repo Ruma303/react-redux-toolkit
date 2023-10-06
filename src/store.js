@@ -10,16 +10,16 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
+    counter: counterReducer,
+    // Aggiungere altri riduttori qui se ce ne sono.
 });
-
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
     reducer: persistedReducer,
     middleware: getDefaultMiddleware({
         serializableCheck: false,
-    }),
+    }), // Aggiungere altri middleware qui se ce ne sono.
 });
 
 export const persistor = persistStore(store);
