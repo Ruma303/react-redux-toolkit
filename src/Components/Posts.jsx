@@ -1,20 +1,7 @@
-import { useGetPostsQuery, useGetPostQuery, useGetCommentsQuery } from '../Features/Api/postApi';
+import { useGetPostsQuery } from '../Features/Api/postApi';
 
 const Posts = () => {
-    /* const dataFetch = useGetPostsQuery();
-    console.log(dataFetch); */
-
-    /* const { data } = useGetPostsQuery();
-    console.log(data); */
-
-    /* const { data: posts } = useGetPostsQuery();
-    console.log(posts);
-
-    const { data: post5 } = useGetPostQuery(5);
-    console.log(post5); */
-
     const { data: posts = [], isLoading: postLoading, isError: postError } = useGetPostsQuery();
-    const { data: comments = [], isLoading: commentLoading, isError: commentError } = useGetCommentsQuery()
 
     return (<>
         <h1>Posts</h1>
@@ -27,17 +14,12 @@ const Posts = () => {
             </>
         ) : posts && (
             <ul> {posts.map((post) =>
-                <li key={post.id}>{post.id}. {post.title}</li>)}
-            </ul>
-        )}
-
-        <h1>Comments</h1>
-        {comments && (
-            <ul> {comments.map((comment) =>
-                <li key={comment.id}>{comment.id}. {comment.name}: {comment.body}</li>)}
+                <li key={post.id}>
+                    <h3>{post.id}. {post.title}</h3>
+                    <p>{post.body}</p>
+                </li>)}
             </ul>
         )}
     </>);
 }
 export default Posts;
-

@@ -2,13 +2,10 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const postApi = createApi({
     name: 'postApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000' }),
     endpoints: (builder) => ({
         getPosts: builder.query({
             query: () => 'posts',
-        }),
-        getComments: builder.query({
-            query: () => 'comments',
         }),
         getPost: builder.query({
             query: (id) => `posts/${id}`,
@@ -19,5 +16,4 @@ export const postApi = createApi({
 export const {
     useGetPostsQuery,
     useGetPostQuery,
-    useGetCommentsQuery
 } = postApi;
