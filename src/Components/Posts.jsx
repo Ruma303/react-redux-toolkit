@@ -1,4 +1,4 @@
-import { useGetPostsQuery, useDeletePostMutation  } from '../Features/Api/postApi';
+import { useGetPostsQuery, useDeletePostMutation } from '../Features/Api/postApi';
 import { Link } from 'react-router-dom';
 import React from 'react';
 

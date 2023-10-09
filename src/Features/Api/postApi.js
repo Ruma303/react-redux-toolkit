@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-/* export const postApi = createApi({
+export const postApi = createApi({
     reducerPath: 'postApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3500' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000' }),
     endpoints: (builder) => ({
         getPosts: builder.query({
             query: () => 'posts',
@@ -40,13 +40,12 @@ export const {
     useUpdatePostMutation,
     useDeletePostMutation,
 } = postApi;
- */
+
 
 //% Post invalidazione
-
-export const postApi = createApi({
+/* export const postApi = createApi({
     reducerPath: 'postApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3500' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000' }),
     tagTypes: ['Posts'],
     endpoints: (builder) => ({
         getPosts: builder.query({
@@ -89,4 +88,4 @@ export const {
     useCreatePostMutation,
     useUpdatePostMutation,
     useDeletePostMutation,
-} = postApi;
+} = postApi; */

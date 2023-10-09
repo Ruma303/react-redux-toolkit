@@ -36,13 +36,13 @@ const CreatePost = () => {
                     value={title}
                     onChange={handleInputTitle}
                 />
-                <br />
+
                 <label htmlFor="post-body">Enter post description:</label>
                 <textarea type="text" id='post-body' rows="5"
                     value={body}
                     onChange={handleInputBody}
                 />
-                <br />
+
                 <button className='btn btn-primary' disabled={isLoading}>Create post</button>
             </form>
             {createdPost &&

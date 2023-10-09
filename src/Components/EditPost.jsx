@@ -12,7 +12,7 @@ const EditPost = () => {
     const [body, setBody] = useState('');
     const [editedPost, setEditedPost] = useState(null);
 
-    const [editPost] = useUpdatePostMutation();
+    const [updatePost] = useUpdatePostMutation();
 
     //* Imposta i valori iniziali del form con i dati del post esistente
     useEffect(() => {
@@ -33,8 +33,8 @@ const EditPost = () => {
     const handleForm = async (e) => {
         e.preventDefault();
         try {
-            const result = await editPost({ id, updatedPost: { title, body } }).unwrap();
-            //navigate('/');
+            const result = await updatePost({ id, updatedPost: { title, body } }).unwrap();
+            navigate('/');
             setEditedPost(result);
             setTitle('');
             setBody('');
